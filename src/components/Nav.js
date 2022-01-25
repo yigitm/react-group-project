@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router, Route, Routes, NavLink,
 } from 'react-router-dom';
 import Rockets from './Rockets';
-import Missions from './Missions';
+import Missions from './missions/Missions';
 import Profile from './Profile';
 import Logo from '../images/planet.png';
 import './Nav.css';
@@ -17,14 +17,14 @@ const Nav = () => (
       </div>
       <ul className="listContainer">
         <li>
-          <NavLink exact to="/" className="links" activeClassName="active">Rockets</NavLink>
+          <NavLink to="/" className="links" activeclassname="active">Rockets</NavLink>
         </li>
         <li>
-          <NavLink exact to="/missions" className="links" activeClassName="active">Missions</NavLink>
+          <NavLink to="/missions" className="links" activeclassname="active">Missions</NavLink>
         </li>
         <p className="vl">|</p>
         <li>
-          <NavLink exact to="/profile" className="links" activeClassName="active">My Profile</NavLink>
+          <NavLink to="/profile" className="links" activeclassname="active">My Profile</NavLink>
         </li>
       </ul>
     </nav>
