@@ -3,7 +3,12 @@ const baseURL = 'https://api.spacexdata.com/v3/rockets';
 
 const initialState = [];
 
-export const getData = async (state) => {
+export const getData = (state) => ({
+  type: GET_DATA,
+  payload: state,
+});
+
+export const fetchData = async (dispatch) => {
   const response = await fetch(baseURL);
   const data = await response.json();
   const keys = Object.keys(data);
@@ -17,13 +22,10 @@ export const getData = async (state) => {
     };
     rockets.push(rocket);
   }
-  state({
-    type: GET_DATA,
-    payload: rockets,
-  });
+  dispatch({ type: GET_DATA, payload: rockets });
 };
 
-const rocketsReducers = (state = initialState, action) => {
+const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DATA:
       return action.payload;
@@ -31,4 +33,4 @@ const rocketsReducers = (state = initialState, action) => {
       return state;
   }
 };
-export default rocketsReducers;
+export default rocketsReducer;

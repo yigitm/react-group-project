@@ -9,22 +9,16 @@ import Button from 'react-bootstrap/Button';
 const Rockets = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
 
-  const displayRockets = (
-    <Container>
-      <Row>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Tİtle</Card.Title>
-              <Card.Text>{console.log(rockets)}</Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-  );
+  const displayRockets = rockets.map((rocket) => (
+    <Card key={rocket.id} style={{ width: '18rem' }}>
+      <Card.Img src={rocket.flickrImages} />
+      <Card.Body>
+        <Card.Title>{rocket.rocketName}</Card.Title>.
+        <Card.Text>{rocket.description}</Card.Text>
+        <Button variant="primary">Reserve Rocket</Button>
+      </Card.Body>
+    </Card>
+  ));
 
   return displayRockets;
 };
