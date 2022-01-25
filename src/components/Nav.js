@@ -1,6 +1,9 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route, Routes, NavLink,
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  NavLink,
 } from 'react-router-dom';
 import Rockets from './Rockets';
 import Missions from './Missions';
@@ -17,14 +20,35 @@ const Nav = () => (
       </div>
       <ul className="listContainer">
         <li>
-          <NavLink exact to="/" className="links" activeClassName="active">Rockets</NavLink>
+          <NavLink
+            exact="true"
+            to="/"
+            className="links"
+            activeclassname="active"
+          >
+            Rockets
+          </NavLink>
         </li>
         <li>
-          <NavLink exact to="/missions" className="links" activeClassName="active">Missions</NavLink>
+          <NavLink
+            exact="true"
+            to="/missions"
+            className="links"
+            activeclassname="active"
+          >
+            Missions
+          </NavLink>
         </li>
         <p className="vl">|</p>
         <li>
-          <NavLink exact to="/profile" className="links" activeClassName="active">My Profile</NavLink>
+          <NavLink
+            exact="true"
+            to="/profile"
+            className="links"
+            activeclassname="active"
+          >
+            My Profile
+          </NavLink>
         </li>
       </ul>
     </nav>
