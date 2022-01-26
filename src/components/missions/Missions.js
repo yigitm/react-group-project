@@ -13,6 +13,7 @@ const Missions = () => {
     };
     loadingMissions();
   }, []);
+
   return (
     <div>
       <table className="table table-striped">
@@ -21,7 +22,7 @@ const Missions = () => {
             <th className="fs-3 border" scope="col">Mission</th>
             <th className="fs-3 border" scope="col">Description</th>
             <th className="fs-3 border" scope="col">Status</th>
-            <th className="fs-3 border" scope="col">#</th>
+            <th className="fs-3 border" scope="col"> </th>
           </tr>
         </thead>
         <tbody>
