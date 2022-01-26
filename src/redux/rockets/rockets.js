@@ -1,7 +1,6 @@
 const GET_DATA = 'react-group-project/rockets/GET_DATA';
 const BOOK_ROCKET = 'react-group-project/rockets/BOOK_ROCKET';
 const CANCEL_ROCKET = 'react-group-project/rockets/CANCEL_ROCKET';
-const FILTER_RESERVATION = 'react-group-project/rockets/FILTER_RESERVATION';
 const baseURL = 'https://api.spacexdata.com/v3/rockets';
 
 const initialState = [];
@@ -43,17 +42,13 @@ const rocketsReducer = (state = initialState, action) => {
     case GET_DATA:
       return action.payload;
     case BOOK_ROCKET:
-      return state.map((rocket) =>
-        parseInt(rocket.id, 10) === parseInt(action.payload, 10)
-          ? { ...rocket, reserved: true }
-          : rocket,
-      );
+      return state.map((rocket) => (parseInt(rocket.id, 10) === parseInt(action.payload, 10)
+        ? { ...rocket, reserved: true }
+        : rocket));
     case CANCEL_ROCKET:
-      return state.map((rocket) =>
-        parseInt(rocket.id, 10) === parseInt(action.payload, 10)
-          ? { ...rocket, reserved: false }
-          : rocket,
-      );
+      return state.map((rocket) => (parseInt(rocket.id, 10) === parseInt(action.payload, 10)
+        ? { ...rocket, reserved: false }
+        : rocket));
     default:
       return state;
   }

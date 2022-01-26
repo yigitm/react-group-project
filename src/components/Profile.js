@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,9 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Profile = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
 
-  const filteredReservations = rockets.filter((rocket) =>
-    rocket.reserved ? rocket : null,
-  );
+  const filteredReservations = rockets.filter((rocket) => (rocket.reserved ? rocket : null));
 
   const reservedList = filteredReservations.map((rocket) => (
     <Accordion key={rocket.id}>
