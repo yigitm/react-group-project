@@ -41,8 +41,8 @@ const Mission = ({ mission }) => {
         <button
           type="button"
           className={reserved
-            ? 'button-status button-status-active'
-            : 'button-status'}
+            ? 'button-status button-status-active align-middle'
+            : 'button-status align-middle'}
         >
           <span>
             {reserved

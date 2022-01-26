@@ -16,7 +16,6 @@ export const getMissions = () => (dispatch) => axios.get('https://api.spacexdata
         mission_id: missionsArr[i][1].mission_id,
         name: missionsArr[i][1].mission_name,
         description: missionsArr[i][1].description,
-        reserved: false,
       };
       newMissionsArr.push(newMission);
     }
@@ -35,7 +34,7 @@ export const leaveMissions = (payload) => ({
   payload,
 });
 
-export default (state = initialState, action) => {
+const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MISSIONS_SUCCESS:
       return [
@@ -62,3 +61,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default missionsReducer;

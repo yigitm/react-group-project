@@ -1,18 +1,9 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Mission from './Mission';
-import { getMissions } from '../../redux/missions/missions';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missionsReducer);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const loadingMissions = async () => {
-      await dispatch(getMissions());
-    };
-    loadingMissions();
-  }, []);
 
   return (
     <div>
