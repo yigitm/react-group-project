@@ -7,15 +7,19 @@ import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { bookRocket } from '../redux/rockets/rockets';
+import { bookRocket, cancelRocket } from '../redux/rockets/rockets';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
   const [reserve, setReserve] = useState(false);
   const dispatch = useDispatch();
 
-  const handleReserve = (e) => {
-    dispatch(bookRocket(e.target.id));
+  const handleReserve = (e, rocket) => {
+    if (rocket.reserved) {
+      dispatch(cancelRocket(e.target.id));
+    } else {
+      dispatch(bookRocket(e.target.id));
+    }
     setReserve(!reserve);
   };
 
@@ -33,7 +37,7 @@ const Rockets = () => {
           id={rocket.id}
           variant={rocket.reserved ? 'outline-secondary' : 'primary'}
           onClick={(e) => {
-            handleReserve(e);
+            handleReserve(e, rocket);
           }}
         >
           {rocket.reserved ? 'Cancel' : 'Reserve'}
