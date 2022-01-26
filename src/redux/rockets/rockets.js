@@ -1,4 +1,5 @@
 const GET_DATA = 'react-group-project/rockets/GET_DATA';
+const BOOK_ROCKET = 'react-group-project/rockets/BOOK_ROCKET';
 const baseURL = 'https://api.spacexdata.com/v3/rockets';
 
 const initialState = [];
@@ -25,10 +26,19 @@ export const fetchData = async (dispatch) => {
   dispatch({ type: GET_DATA, payload: rockets });
 };
 
+export const bookRocket = (state) => ({
+  type: BOOK_ROCKET,
+  payload: state,
+});
+
 const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DATA:
       return action.payload;
+    case BOOK_ROCKET:
+      return state.map((rocket) =>
+        rocket.id == action.payload ? { ...rocket, reserved: true } : rocket,
+      );
     default:
       return state;
   }

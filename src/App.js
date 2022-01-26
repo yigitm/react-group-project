@@ -10,11 +10,7 @@ const App = () => {
     dispatch(fetchData);
   }, []);
 
-  return (
-    <div>
-      <Nav />
-    </div>
-  );
+  return <Nav />;
 };
 
 export default App;
