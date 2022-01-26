@@ -39,20 +39,24 @@ const Rockets = () => {
             ) : null}
             {rocket.description}
           </Card.Text>
+          <Button
+            id={rocket.id}
+            variant={rocket.reserved ? 'outline-secondary' : 'primary'}
+            onClick={(e) => {
+              handleReserve(e, rocket);
+            }}
+          >
+            {rocket.reserved ? 'Cancel' : 'Reserve'}
+          </Button>
         </Card.Body>
-        <Button
-          id={rocket.id}
-          variant={rocket.reserved ? 'outline-secondary' : 'primary'}
-          onClick={(e) => {
-            handleReserve(e, rocket);
-          }}
-        >
-          {rocket.reserved ? 'Cancel' : 'Reserve'}
-        </Button>
       </Col>
     </Row>
   ));
 
-  return <Container fluid>{displayRockets}</Container>;
+  return (
+    <Container fluid className="mt-5">
+      {displayRockets}
+    </Container>
+  );
 };
 export default Rockets;
