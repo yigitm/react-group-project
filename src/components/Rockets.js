@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -12,21 +12,18 @@ import { bookRocket, cancelRocket } from '../redux/rockets/rockets';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
-  const [reserve, setReserve] = useState(false);
   const dispatch = useDispatch();
   /* eslint no-unused-expressions: [2, { allowShortCircuit: true, allowTernary: true }] */
   const handleReserve = (e, rocket) => {
     rocket.reserved
       ? dispatch(cancelRocket(e.target.id))
       : dispatch(bookRocket(e.target.id));
-
-    setReserve(!reserve);
   };
   /* eslint no-unused-expressions: [2, { allowShortCircuit: true, allowTernary: true }] */
   const displayRockets = rockets.map((rocket) => (
-    <Row key={rocket.id} className="g-0">
+    <Row key={rocket.id} className="g-1 mb-3">
       <Col className="col-2">
-        <Image src={rocket.flickrImages} className="img-thumbnail" />
+        <Image src={rocket.flickrImages} className="img-thumbnail border-0" />
       </Col>
       <Col className="col-10">
         <Card.Body>
