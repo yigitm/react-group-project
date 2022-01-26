@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { bookRocket, cancelRocket } from '../redux/rockets/rockets';
 
@@ -15,11 +16,10 @@ const Rockets = () => {
   const dispatch = useDispatch();
 
   const handleReserve = (e, rocket) => {
-    if (rocket.reserved) {
-      dispatch(cancelRocket(e.target.id));
-    } else {
-      dispatch(bookRocket(e.target.id));
-    }
+    rocket.reserved
+      ? dispatch(cancelRocket(e.target.id))
+      : dispatch(bookRocket(e.target.id));
+
     setReserve(!reserve);
   };
 
@@ -31,7 +31,14 @@ const Rockets = () => {
       <Col className="col-10">
         <Card.Body>
           <Card.Title className="fw-bold">{rocket.rocketName}</Card.Title>
-          <Card.Text>{rocket.description}</Card.Text>
+          <Card.Text>
+            {rocket.reserved ? (
+              <Badge bg="info" className="me-2">
+                Reserved
+              </Badge>
+            ) : null}
+            {rocket.description}
+          </Card.Text>
         </Card.Body>
         <Button
           id={rocket.id}
