@@ -36,21 +36,23 @@ export const cancelRocket = (state) => ({
   type: CANCEL_ROCKET,
   payload: state,
 });
-
+/* eslint-disable max-len */
 const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DATA:
       return action.payload;
     case BOOK_ROCKET:
-      return state.map((rocket) =>
-        rocket.id == action.payload ? { ...rocket, reserved: true } : rocket,
-      );
+      return state.map((rocket) => (parseInt(rocket.id, 10) === parseInt(action.payload, 10)
+        ? { ...rocket, reserved: true }
+        : rocket));
     case CANCEL_ROCKET:
-      return state.map((rocket) =>
-        rocket.id == action.payload ? { ...rocket, reserved: false } : rocket,
-      );
+      return state.map((rocket) => (parseInt(rocket.id, 10) === parseInt(action.payload, 10)
+        ? { ...rocket, reserved: false }
+        : rocket));
     default:
       return state;
   }
 };
+/* eslint-disable max-len */
+
 export default rocketsReducer;

@@ -14,7 +14,7 @@ const Rockets = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
   const [reserve, setReserve] = useState(false);
   const dispatch = useDispatch();
-
+  /* eslint no-unused-expressions: [2, { allowShortCircuit: true, allowTernary: true }] */
   const handleReserve = (e, rocket) => {
     rocket.reserved
       ? dispatch(cancelRocket(e.target.id))
@@ -22,7 +22,7 @@ const Rockets = () => {
 
     setReserve(!reserve);
   };
-
+  /* eslint no-unused-expressions: [2, { allowShortCircuit: true, allowTernary: true }] */
   const displayRockets = rockets.map((rocket) => (
     <Row key={rocket.id} className="g-0">
       <Col className="col-2">
