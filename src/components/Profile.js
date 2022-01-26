@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,12 +7,17 @@ import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Profile = () => {
-  const reservations = useSelector((state) => state.rocketsReducer);
-  const displayReservations = reservations.map((reservation) => (
-    <Accordion key={reservation.id}>
-      <Accordion.Item eventKey={reservation.id}>
-        <Accordion.Header>{reservation.rocketName}</Accordion.Header>
-        <Accordion.Body>{reservation.description}</Accordion.Body>
+  const rockets = useSelector((state) => state.rocketsReducer);
+
+  const filteredReservations = rockets.filter((rocket) =>
+    rocket.reserved ? rocket : null,
+  );
+
+  const reservedList = filteredReservations.map((rocket) => (
+    <Accordion key={rocket.id}>
+      <Accordion.Item eventKey={rocket.id}>
+        <Accordion.Header>{rocket.rocketName}</Accordion.Header>
+        <Accordion.Body>{rocket.description}</Accordion.Body>
       </Accordion.Item>
     </Accordion>
   ));
@@ -25,7 +30,7 @@ const Profile = () => {
         </Col>
         <Col className="col-6 d-flex flex-column">
           <h1>My Rockets</h1>
-          {displayReservations}
+          {reservedList}
         </Col>
       </Row>
     </Container>
