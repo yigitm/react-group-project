@@ -1,34 +1,7 @@
-table,
-th,
-td {
-  border: 1px solid rgb(230, 226, 226);
-  border-collapse: collapse;
-  padding: 0.6rem 0.4rem;
-}
-
 button {
   border-radius: 3px;
   font-size: 14px;
   cursor: pointer;
-}
-
-.list-container {
-  margin: 2rem auto;
-  width: 90vw;
-  max-width: 1900px;
-}
-
-th {
-  text-align: left;
-}
-
-td {
-  vertical-align: top;
-}
-
-.button-container {
-  vertical-align: middle;
-  padding: 0 1rem;
 }
 
 span {
@@ -45,12 +18,9 @@ span {
 }
 
 .button-join {
-  border: 1.5px solid black;
+  border: 2px rgb(0, 165, 165) solid;
   padding: 0.4rem 0.4rem;
-}
-
-tr:nth-child(even) {
-  background-color: rgb(240, 240, 240);
+  color: rgb(0, 165, 165);
 }
 
 .button-status-active {
@@ -58,6 +28,6 @@ tr:nth-child(even) {
 }
 
 .button-join-active {
-  border: 1.5px solid red;
+  border: 2px solid red;
   color: red;
 }

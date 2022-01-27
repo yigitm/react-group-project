@@ -37,12 +37,12 @@ const Mission = ({ mission }) => {
       <td>
         {description}
       </td>
-      <td>
+      <td className="align-middle">
         <button
           type="button"
           className={reserved
-            ? 'button-status button-status-active align-middle'
-            : 'button-status align-middle'}
+            ? 'button-status button-status-active'
+            : 'button-status'}
         >
           <span>
             {reserved
@@ -51,7 +51,7 @@ const Mission = ({ mission }) => {
           </span>
         </button>
       </td>
-      <td>
+      <td className="align-middle">
         <button
           type="button"
           className={reserved
