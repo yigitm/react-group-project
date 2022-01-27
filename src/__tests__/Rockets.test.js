@@ -1,50 +1,73 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
-import Rockets from '../components/Rockets';
+import { render, screen, getByText } from '@testing-library/react';
+import store from '../redux/configureStore';
+import rocketsReducer, {
+  getData,
+  bookRocket,
+  cancelRocket,
+} from '../redux/rockets/rockets';
 
-describe('Rockets', () => {
-  const rockets = [
-    {
-      id: 1,
+describe('Unit tests for rocket reducers', () => {
+  test('getData: initial state of the store should be empty', () => {
+    expect(rocketsReducer([], getData([]))).toEqual([]);
+  });
+
+  test('getData: return an array of objects after data fetch', () => {
+    const falcon1 = {
+      id: '1',
       rocketName: 'Falcon 1',
-      description: 'Lorem Ipsum Onum',
-      flickrImages: 'https://imgur.com/DaCfMsj.jpg',
-      reserved: false,
-    },
-  ];
-  const displayRockets = rockets.map((rocket) => (
-    <Row key={rocket.id} className="g-1 mb-3">
-      <Col className="col-2">
-        <Image src={rocket.flickrImages} className="img-thumbnail border-0" />
-      </Col>
-      <Col className="col-10">
-        <Card.Body>
-          <Card.Title className="fw-bold">{rocket.rocketName}</Card.Title>
-          <Card.Text>
-            {rocket.reserved ? (
-              <Badge bg="info" className="me-2">
-                Reserved
-              </Badge>
-            ) : null}
-            {rocket.description}
-          </Card.Text>
-          <Button
-            id={rocket.id}
-            variant={rocket.reserved ? 'outline-secondary' : 'primary'}
-            onClick={(e) => {
-              handleReserve(e, rocket);
-            }}
-          >
-            {rocket.reserved ? 'Cancel' : 'Reserve'}
-          </Button>
-        </Card.Body>
-      </Col>
-    </Row>
-  ));
-  test('Test', () => {
-    displayRockets;
-    const rocketName = 'Falcon 1';
-    expect(rocketName).toBeInTheDocument();
+      description: 'Lorem ipsum onum',
+      flickrImages: 'image_url',
+    };
+    const falcon9 = {
+      id: '2',
+      rocketName: 'Falcon 9',
+      description: 'Lorem ipsum onum',
+      flickrImages: 'image_url',
+    };
+    const rockets = [falcon1, falcon9];
+    expect(rocketsReducer(rockets, getData(rockets))).toEqual(rockets);
+  });
+
+  test('bookRocket: add `reserved: true` to given id & return an array', () => {
+    const falcon1 = {
+      id: '1',
+      rocketName: 'Falcon 1',
+      description: 'Lorem ipsum onum',
+      flickrImages: 'image_url',
+    };
+    const falcon9 = {
+      id: '2',
+      rocketName: 'Falcon 9',
+      description: 'Lorem ipsum onum',
+      flickrImages: 'image_url',
+    };
+    let rockets = [falcon1, falcon9];
+    let newState = rocketsReducer(rockets, bookRocket(2));
+    expect(newState[1].reserved).toBe(true);
+  });
+
+  test('cancelRocket: add `reserved: false` to given id & return an array', () => {
+    const falcon1 = {
+      id: '1',
+      rocketName: 'Falcon 1',
+      description: 'Lorem ipsum onum',
+      flickrImages: 'image_url',
+    };
+    const falcon9 = {
+      id: '2',
+      rocketName: 'Falcon 9',
+      description: 'Lorem ipsum onum',
+      flickrImages: 'image_url',
+    };
+    let rockets = [falcon1, falcon9];
+    let newState = rocketsReducer(rockets, cancelRocket(1));
+    expect(newState[0].reserved).toBe(false);
+  });
+});
+
+describe('Integration tests for Rocket', () => {
+  test('', () => {
+    expect(rocketsReducer([], getData([]))).toEqual([]);
   });
 });
