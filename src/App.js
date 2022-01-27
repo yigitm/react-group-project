@@ -11,9 +11,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <Nav />
-    </div>
+    <Nav />
   );
 };
 

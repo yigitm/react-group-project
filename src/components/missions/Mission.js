@@ -53,7 +53,11 @@ const Mission = ({ mission }) => {
       </td>
       <td className="align-middle">
         <button
+          data-testid="joinButton"
           type="button"
+          value={reserved
+            ? 'Cancel Mission'
+            : 'Join Mission'}
           className={reserved
             ? 'button-join button-join-active'
             : 'button-join'}

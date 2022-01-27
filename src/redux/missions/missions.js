@@ -7,6 +7,11 @@ const LEAVE_MISSION = 'SPACE_TRAVELERS/MISSIONS/LEAVE_MISSION';
 
 const initialState = [];
 
+export const getData = (state) => ({
+  type: GET_MISSIONS_SUCCESS,
+  payload: state,
+});
+
 export const getMissions = () => (dispatch) => axios.get('https://api.spacexdata.com/v3/missions').then(
   (missions) => {
     const missionsArr = Object.entries(missions.data);
