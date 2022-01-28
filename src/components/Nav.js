@@ -6,8 +6,8 @@ import {
   NavLink,
 } from 'react-router-dom';
 import Rockets from './Rockets';
-import Missions from './Missions';
-import Profile from './Profile';
+import Missions from './missions/Missions';
+import Profile from './profile/Profile';
 import Logo from '../images/planet.png';
 import './Nav.css';
 
