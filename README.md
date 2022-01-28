@@ -49,7 +49,7 @@ git clone git@github.com:yigitm/react-group-project.git
 ```
 
 ```
-cd bookstore
+cd react-group-project
 ```
 
 ### Usage
