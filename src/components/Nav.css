@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 2em;
+  margin-left: 2em;
+  border-bottom: 2px solid rgb(204, 200, 200);
+}
+
+.logoContainer {
+  display: flex;
+}
+
+.links {
+  margin-right: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(74, 157, 235);
+}
+
+.listContainer {
+  list-style: none;
+  display: flex;
+}
+
+.vl {
+  margin: 0;
+  font-weight: bold;
+  justify-self: center;
+  margin-right: 1em;
+}
+
+.logo {
+  max-height: 60px;
+  margin-right: 1em;
+}
+
+.active {
+  border-bottom: 3px rgb(74, 157, 235) solid;
+}

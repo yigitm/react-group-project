@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile.js: component test Profile.js: should render items that has \`reserved: true\` property 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="mt-5 container"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-6 d-flex col"
+          >
+            <h1>
+              My Missions
+            </h1>
+          </div>
+          <div
+            class="col-6 d-flex flex-column col"
+          >
+            <h1>
+              My Rockets
+            </h1>
+            <div
+              class="accordion"
+            >
+              <div
+                class="accordion-item"
+              >
+                <h2
+                  class="accordion-header"
+                >
+                  <button
+                    aria-expanded="false"
+                    class="accordion-button collapsed"
+                    type="button"
+                  >
+                    Falcon 1
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse"
+                >
+                  <div
+                    class="accordion-body"
+                  >
+                    Lorem ipsum onum
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="mt-5 container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-6 d-flex col"
+        >
+          <h1>
+            My Missions
+          </h1>
+        </div>
+        <div
+          class="col-6 d-flex flex-column col"
+        >
+          <h1>
+            My Rockets
+          </h1>
+          <div
+            class="accordion"
+          >
+            <div
+              class="accordion-item"
+            >
+              <h2
+                class="accordion-header"
+              >
+                <button
+                  aria-expanded="false"
+                  class="accordion-button collapsed"
+                  type="button"
+                >
+                  Falcon 1
+                </button>
+              </h2>
+              <div
+                class="accordion-collapse collapse"
+              >
+                <div
+                  class="accordion-body"
+                >
+                  Lorem ipsum onum
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
