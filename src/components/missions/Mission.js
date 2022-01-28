@@ -38,18 +38,26 @@ const Mission = ({ mission }) => {
         {description}
       </td>
       <td className="align-middle">
-        <button
-          type="button"
-          className={reserved
-            ? 'button-status button-status-active'
-            : 'button-status'}
-        >
-          <span>
-            {reserved
-              ? 'Active Member'
-              : 'NOT A MEMBER'}
-          </span>
-        </button>
+        {reserved && (
+          <button
+            type="button"
+            className="button-status button-status-active"
+          >
+            <span>
+              Active Member
+            </span>
+          </button>
+        )}
+        {!reserved && (
+          <button
+            type="button"
+            className="button-status"
+          >
+            <span>
+              NOT A MEMBER
+            </span>
+          </button>
+        )}
       </td>
       <td className="align-middle">
         {reserved && (
