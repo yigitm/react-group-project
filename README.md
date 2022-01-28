@@ -45,7 +45,7 @@ cd <your_desktop>
 ```
 
 ```
-git clone git@github.com:yigitm/bookstore.git
+git clone git@github.com:yigitm/react-group-project.git
 ```
 
 ```
