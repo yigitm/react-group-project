@@ -29,22 +29,35 @@ const Rockets = () => {
         <Card.Body>
           <Card.Title className="fw-bold">{rocket.rocketName}</Card.Title>
           <Card.Text>
-            {rocket.reserved ? (
+            {rocket.reserved && (
               <Badge bg="info" className="me-2">
                 Reserved
               </Badge>
-            ) : null}
+            )}
             {rocket.description}
           </Card.Text>
-          <Button
-            id={rocket.id}
-            variant={rocket.reserved ? 'outline-secondary' : 'primary'}
-            onClick={(e) => {
-              handleReserve(e, rocket);
-            }}
-          >
-            {rocket.reserved ? 'Cancel' : 'Reserve'}
-          </Button>
+          {rocket.reserved && (
+            <Button
+              variant={'outline-secondary'}
+              id={rocket.id}
+              onClick={(e) => {
+                handleReserve(e, rocket);
+              }}
+            >
+              Cancel
+            </Button>
+          )}
+          {!rocket.reserved && (
+            <Button
+              variant={'primary'}
+              id={rocket.id}
+              onClick={(e) => {
+                handleReserve(e, rocket);
+              }}
+            >
+              Reserve
+            </Button>
+          )}
         </Card.Body>
       </Col>
     </Row>
