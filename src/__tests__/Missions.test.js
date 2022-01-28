@@ -29,54 +29,60 @@ describe('Testing User Interation: ', () => {
   it('Tests Mission render', () => {
     const tree = render(
       <div>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th className="fs-3 border" scope="col">Mission</th>
-            <th className="fs-3 border" scope="col">Description</th>
-            <th className="fs-3 border" scope="col">Status</th>
-            <th className="fs-3 border" scope="col"> </th>
-          </tr>
-        </thead>
-        <tbody>
-          {<Provider store={store}><Mission key={mission.mission_id} mission={mission} /></Provider>}
-        </tbody>
-      </table>
-    </div>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th className="fs-3 border" scope="col">Mission</th>
+              <th className="fs-3 border" scope="col">Description</th>
+              <th className="fs-3 border" scope="col">Status</th>
+              <th className="fs-3 border" scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <Provider store={store}>
+              <Mission key={mission.mission_id} mission={mission} />
+            </Provider>
+          </tbody>
+        </table>
+      </div>,
     );
     expect(tree).toMatchSnapshot();
   });
 
-  
   it('Tests Missions render', () => {
-    const tree = render(<Provider store={store}><Missions /></Provider>);
+    const tree = render(
+      <Provider store={store}>
+        <Missions />
+      </Provider>,
+    );
     expect(tree).toMatchSnapshot();
   });
 
-  
   it('Tests Join Button', () => {
     const missionsArr = [];
     missionsArr.push(mission);
     const joined = missionsReducer(missionsArr, joinMissions(mission.mission_id));
     const tree = render(
       <div>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th className="fs-3 border" scope="col">Mission</th>
-            <th className="fs-3 border" scope="col">Description</th>
-            <th className="fs-3 border" scope="col">Status</th>
-            <th className="fs-3 border" scope="col"> </th>
-          </tr>
-        </thead>
-        <tbody>
-          {<Provider store={store}><Mission key={joined[0].mission_id} mission={joined[0]} /></Provider>}
-        </tbody>
-      </table>
-    </div>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th className="fs-3 border" scope="col">Mission</th>
+              <th className="fs-3 border" scope="col">Description</th>
+              <th className="fs-3 border" scope="col">Status</th>
+              <th className="fs-3 border" scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <Provider store={store}>
+              <Mission key={joined[0].mission_id} mission={joined[0]} />
+            </Provider>
+          </tbody>
+        </table>
+      </div>,
     );
     expect(tree).toMatchSnapshot();
-    expect(screen.getByTestId("joinButton")).toHaveTextContent('Cancel Mission');
+    expect(screen.getByTestId('joinButton')).toHaveTextContent('Cancel Mission');
   });
 
   it('Tests Leave Button', () => {
@@ -85,45 +91,47 @@ describe('Testing User Interation: ', () => {
     const joined = missionsReducer(missionsArr, leaveMissions(mission2.mission_id));
     const tree = render(
       <div>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th className="fs-3 border" scope="col">Mission</th>
-            <th className="fs-3 border" scope="col">Description</th>
-            <th className="fs-3 border" scope="col">Status</th>
-            <th className="fs-3 border" scope="col"> </th>
-          </tr>
-        </thead>
-        <tbody>
-          {<Provider store={store}><Mission key={joined[0].mission_id} mission={joined[0]} /></Provider>}
-        </tbody>
-      </table>
-    </div>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th className="fs-3 border" scope="col">Mission</th>
+              <th className="fs-3 border" scope="col">Description</th>
+              <th className="fs-3 border" scope="col">Status</th>
+              <th className="fs-3 border" scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <Provider store={store}>
+              <Mission key={joined[0].mission_id} mission={joined[0]} />
+            </Provider>
+          </tbody>
+        </table>
+      </div>,
     );
     expect(tree).toMatchSnapshot();
-    expect(screen.getByTestId("joinButton")).toHaveTextContent('Join Mission');
+    expect(screen.getByTestId('joinButton')).toHaveTextContent('Join Mission');
   });
 
   it('Tests MyMissions Render', () => {
     const missionsArr = [];
     missionsArr.push(mission);
     const joined = missionsReducer(missionsArr, joinMissions(mission.mission_id));
-    const tree = render(
+    render(
       <div>
-      <table className="table table-striped w-50">
-        <thead>
-          <tr>
-            <th className="fs-3 border" scope="col">My Missions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {joined.map((myMission) => (
-            <MyMissions key={myMission.mission_id} mission={myMission} />
-          ))}
-        </tbody>
-      </table>
-    </div>
+        <table className="table table-striped w-50">
+          <thead>
+            <tr>
+              <th className="fs-3 border" scope="col">My Missions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {joined.map((myMission) => (
+              <MyMissions key={myMission.mission_id} mission={myMission} />
+            ))}
+          </tbody>
+        </table>
+      </div>,
     );
-    expect(screen.getByTestId("myMissions")).toHaveTextContent(joined[0].name);
+    expect(screen.getByTestId('myMissions')).toHaveTextContent(joined[0].name);
   });
 });
