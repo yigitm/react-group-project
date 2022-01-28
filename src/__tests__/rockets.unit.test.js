@@ -39,8 +39,8 @@ describe('Unit tests for rocket reducers', () => {
       description: 'Lorem ipsum onum',
       flickrImages: 'image_url',
     };
-    let rockets = [falcon1, falcon9];
-    let newState = rocketsReducer(rockets, bookRocket(2));
+    const rockets = [falcon1, falcon9];
+    const newState = rocketsReducer(rockets, bookRocket(2));
     expect(newState[1].reserved).toBe(true);
   });
 
@@ -57,8 +57,8 @@ describe('Unit tests for rocket reducers', () => {
       description: 'Lorem ipsum onum',
       flickrImages: 'image_url',
     };
-    let rockets = [falcon1, falcon9];
-    let newState = rocketsReducer(rockets, cancelRocket(1));
+    const rockets = [falcon1, falcon9];
+    const newState = rocketsReducer(rockets, cancelRocket(1));
     expect(newState[0].reserved).toBe(false);
   });
 });

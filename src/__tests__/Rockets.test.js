@@ -2,7 +2,6 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from '../redux/configureStore';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,6 +9,7 @@ import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
+import store from '../redux/configureStore';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 describe('Rockets.js: component test', () => {
@@ -49,9 +49,6 @@ describe('Rockets.js: component test', () => {
             <Button
               id={rocket.id}
               variant={rocket.reserved ? 'outline-secondary' : 'primary'}
-              onClick={(e) => {
-                handleReserve(e, rocket);
-              }}
             >
               {rocket.reserved ? 'Cancel' : 'Reserve'}
             </Button>
@@ -89,10 +86,9 @@ describe('Rockets.js: component test', () => {
     const rockets = [falcon1, falcon9];
     const badge = [];
 
-    rockets.map((rocket) => {
-      rocket.reserved ? badge.push(rocket) : null;
-    }),
-      expect(badge.length).toEqual(1);
+    rockets.map((rocket) => (rocket.reserved ? badge.push(rocket) : null));
+
+    expect(badge.length).toEqual(1);
   });
 
   test('Rockets.js: should return null if `reserved: false` to display cancel button', () => {
@@ -114,9 +110,7 @@ describe('Rockets.js: component test', () => {
     const rockets = [falcon1, falcon9];
     const cancelButtons = [];
 
-    rockets.map((rocket) => {
-      rocket.reserved ? rocket : cancelButtons.push(null);
-    });
+    rockets.map((rocket) => (rocket.reserved ? rocket : cancelButtons.push(null)));
 
     expect(cancelButtons.length).toEqual(2);
   });

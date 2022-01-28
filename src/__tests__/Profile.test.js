@@ -1,14 +1,13 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from '../redux/configureStore';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
+import store from '../redux/configureStore';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Profile from '../components/Profile';
 
 describe('Profile.js: component test', () => {
   test('Profile.js: should render items that has `reserved: true` property', () => {
@@ -28,9 +27,7 @@ describe('Profile.js: component test', () => {
     };
     const rockets = [falcon1, falcon9];
 
-    const filteredReservations = rockets.filter((rocket) =>
-      rocket.reserved ? rocket : null,
-    );
+    const filteredReservations = rockets.filter((rocket) => (rocket.reserved ? rocket : null));
 
     const reservedList = filteredReservations.map((rocket) => (
       <Accordion key={rocket.id}>
@@ -76,9 +73,7 @@ describe('Profile.js: component test', () => {
     };
     const rockets = [falcon1, falcon9];
 
-    const filteredReservations = rockets.filter((rocket) =>
-      rocket.reserved ? rocket : null,
-    );
+    const filteredReservations = rockets.filter((rocket) => (rocket.reserved ? rocket : null));
 
     expect(filteredReservations.length).toEqual(1);
   });
@@ -98,14 +93,10 @@ describe('Profile.js: component test', () => {
       flickrImages: 'image_url',
       reserved: false,
     };
-    const rockets = [falcon1];
+    const rockets = [falcon1, falcon9];
 
-    const filteredReservations = rockets.filter((rocket) =>
-      rocket.reserved ? rocket : null,
-    );
+    const filteredReservations = rockets.filter((rocket) => (rocket.reserved ? rocket : null));
 
-    filteredReservations.map((reservation) => {
-      expect(reservation.reserved.length).toEqual(0);
-    });
+    filteredReservations.map((reservation) => expect(reservation.reserved.length).toEqual(0));
   });
 });
