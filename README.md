@@ -70,10 +70,10 @@ It runs the app in the development mode and runs the app in [http://localhost:30
 
 ### Run tests
 
-To run the app, use below command.
+To run the tests, use below command.
 
 ```
-npm start
+npm run test
 ```
 
 Launches the test runner in the interactive watch mode.\
