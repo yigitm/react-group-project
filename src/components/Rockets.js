@@ -38,7 +38,7 @@ const Rockets = () => {
           </Card.Text>
           {rocket.reserved && (
             <Button
-              variant={'outline-secondary'}
+              variant="outline-secondary"
               id={rocket.id}
               onClick={(e) => {
                 handleReserve(e, rocket);
@@ -49,7 +49,7 @@ const Rockets = () => {
           )}
           {!rocket.reserved && (
             <Button
-              variant={'primary'}
+              variant="primary"
               id={rocket.id}
               onClick={(e) => {
                 handleReserve(e, rocket);
