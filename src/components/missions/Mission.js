@@ -22,7 +22,7 @@ const Mission = ({ mission }) => {
   };
 
   const statusChange = () => {
-    if (reserved === true) {
+    if (reserved) {
       leaveMissionsButton();
     } else {
       joinMissionsButton();
@@ -52,23 +52,32 @@ const Mission = ({ mission }) => {
         </button>
       </td>
       <td className="align-middle">
+        {reserved && (
         <button
           data-testid="joinButton"
           type="button"
-          value={reserved
-            ? 'Cancel Mission'
-            : 'Join Mission'}
-          className={reserved
-            ? 'button-join button-join-active'
-            : 'button-join'}
+          value="Cancel Mission"
+          className="button-join button-join-active"
           onClick={statusChange}
         >
           <span>
-            {reserved
-              ? 'Cancel Mission'
-              : 'Join Mission'}
+            Cancel Mission
           </span>
         </button>
+        )}
+        {!reserved && (
+        <button
+          data-testid="joinButton"
+          type="button"
+          value="Join Mission"
+          className="button-join"
+          onClick={statusChange}
+        >
+          <span>
+            Join Mission
+          </span>
+        </button>
+        )}
       </td>
     </tr>
   );
