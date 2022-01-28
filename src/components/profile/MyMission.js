@@ -8,7 +8,7 @@ const MyMission = ({ mission }) => {
 
   return (
     <tr>
-      <td className="fw-bold fs-5">
+      <td className="fw-bold fs-5" data-testid="myMissions">
         {name}
       </td>
     </tr>
