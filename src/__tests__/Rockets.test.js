@@ -116,7 +116,8 @@ describe('Rockets.js: component test', () => {
 
     rockets.map((rocket) => {
       rocket.reserved ? rocket : cancelButtons.push(null);
-    }),
-      expect(cancelButtons.length).toEqual(2);
+    });
+
+    expect(cancelButtons.length).toEqual(2);
   });
 });

@@ -74,15 +74,13 @@ describe('Profile.js: component test', () => {
       flickrImages: 'image_url',
       reserved: false,
     };
-    const rockets = [falcon1];
+    const rockets = [falcon1, falcon9];
 
     const filteredReservations = rockets.filter((rocket) =>
       rocket.reserved ? rocket : null,
     );
 
-    filteredReservations.map((reservation) => {
-      expect(reservation.reserved).toBeTruthy;
-    });
+    expect(filteredReservations.length).toEqual(1);
   });
 
   test('Profile.js: should NOT return items that has `reserved: false` property', () => {
@@ -107,7 +105,7 @@ describe('Profile.js: component test', () => {
     );
 
     filteredReservations.map((reservation) => {
-      expect(reservation.reserved.length).toBeGreaterThanOrEqual(0);
+      expect(reservation.reserved.length).toEqual(0);
     });
   });
 });
