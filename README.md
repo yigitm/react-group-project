@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Group Project
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+The SpaceX API is used to build a React & Redux app that will allow users to mock; book & cancel rocket reservation and join selected space missions.
 
-### `npm start`
+Our development flow included: performing git flow practices & using components with routers, life cycle methods,handling events and state management by Redux store,actions, reducers in [duck Patern](https://github.com/erikras/ducks-modular-redux) with unit and component tests.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![App_Gif](./src/images/app.gif);
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Built With
 
-### `npm test`
+- Javascript
+- React & Redux
+- Redux Middleware (Thunk, Logger)
+- Bootstrap
+- Jest for testing
+
+## Live Demo
+
+[Live Demo Link](https://serene-keller-e42a7e.netlify.app/)
+
+## Getting Started
+
+To get a local copy up and run the app; follow below steps.
+
+### Prerequisites
+
+If you are not familiar to use terminal, please check this [article](https://www.theodinproject.com/courses/web-development-101/lessons/command-line-basics-web-development-101)
+
+### Setup
+
+Open your terminal and run the following commands on your terminal.
+
+Make sure 'Javascript' is not blocked in your browser.
+
+### Install
+
+To get a local copy of the repository, run the following commands on your terminal.
+
+```
+cd <your_desktop>
+```
+
+```
+git clone git@github.com:yigitm/bookstore.git
+```
+
+```
+cd bookstore
+```
+
+### Usage
+
+To install the necessary Javascript packages to your project, run below commands.
+
+```
+npm install
+```
+
+To run the app, use below command.
+
+```
+npm start
+```
+
+It runs the app in the development mode and runs the app in [http://localhost:3000](http://localhost:3000).To view it open your default browser.
+
+### Run tests
+
+To run the app, use below command.
+
+```
+npm start
+```
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[Netlify](https://www.netlify.com/) is used for deployment.
 
-### `npm run build` fails to minify
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👤 **Jonathas Tavares**
+
+- GitHub: [jonathastavares](https://github.com/jonathastavares)
+- LinkedIn: [Jonathas Tavares](https://www.linkedin.com/in/jonathas-tavares)
+
+👤 **Yigit Mersin**
+
+- GitHub: [@github](https://github.com/ygtmrsn)
+- LinkedIn: [@linkedIn](linkedin.com/in/yigitmersin)
+- Twitter: [@twitter](https://twitter.com/ygtmrsn)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/yigitm/react-group-project/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+- Open Source
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

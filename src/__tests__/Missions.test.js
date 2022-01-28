@@ -5,7 +5,6 @@ import React from 'react';
 import store from '../redux/configureStore';
 import Mission from '../components/missions/Mission';
 import Missions from '../components/missions/Missions';
-import MyMissions from '../components/profile/MyMission';
 import missionsReducer, {
   joinMissions,
   leaveMissions,
@@ -15,14 +14,16 @@ describe('Testing User Interation: ', () => {
   const mission = {
     mission_id: '9D1B7E0',
     name: 'Thaicom',
-    description: 'Thaicom is the name of a series of communications satellites operated from Thailand, and also the name of Thaicom Public Company Limited, which is the company that owns and operates the Thaicom satellite fleet and other telecommunication businesses in Thailand and throughout the Asia-Pacific region. The satellite projects were named Thaicom by the King of Thailand, His Majesty the King Bhumibol Adulyadej, as a symbol of the linkage between Thailand and modern communications technology.',
+    description:
+      'Thaicom is the name of a series of communications satellites operated from Thailand, and also the name of Thaicom Public Company Limited, which is the company that owns and operates the Thaicom satellite fleet and other telecommunication businesses in Thailand and throughout the Asia-Pacific region. The satellite projects were named Thaicom by the King of Thailand, His Majesty the King Bhumibol Adulyadej, as a symbol of the linkage between Thailand and modern communications technology.',
     reserved: false,
   };
 
   const mission2 = {
     mission_id: '9D1B7E0',
     name: 'Thaicom',
-    description: 'Thaicom is the name of a series of communications satellites operated from Thailand, and also the name of Thaicom Public Company Limited, which is the company that owns and operates the Thaicom satellite fleet and other telecommunication businesses in Thailand and throughout the Asia-Pacific region. The satellite projects were named Thaicom by the King of Thailand, His Majesty the King Bhumibol Adulyadej, as a symbol of the linkage between Thailand and modern communications technology.',
+    description:
+      'Thaicom is the name of a series of communications satellites operated from Thailand, and also the name of Thaicom Public Company Limited, which is the company that owns and operates the Thaicom satellite fleet and other telecommunication businesses in Thailand and throughout the Asia-Pacific region. The satellite projects were named Thaicom by the King of Thailand, His Majesty the King Bhumibol Adulyadej, as a symbol of the linkage between Thailand and modern communications technology.',
     reserved: true,
   };
 
@@ -32,10 +33,18 @@ describe('Testing User Interation: ', () => {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th className="fs-3 border" scope="col">Mission</th>
-              <th className="fs-3 border" scope="col">Description</th>
-              <th className="fs-3 border" scope="col">Status</th>
-              <th className="fs-3 border" scope="col"> </th>
+              <th className="fs-3 border" scope="col">
+                Mission
+              </th>
+              <th className="fs-3 border" scope="col">
+                Description
+              </th>
+              <th className="fs-3 border" scope="col">
+                Status
+              </th>
+              <th className="fs-3 border" scope="col">
+                {' '}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -61,16 +70,27 @@ describe('Testing User Interation: ', () => {
   it('Tests Join Button', () => {
     const missionsArr = [];
     missionsArr.push(mission);
-    const joined = missionsReducer(missionsArr, joinMissions(mission.mission_id));
+    const joined = missionsReducer(
+      missionsArr,
+      joinMissions(mission.mission_id),
+    );
     const tree = render(
       <div>
         <table className="table table-striped">
           <thead>
             <tr>
-              <th className="fs-3 border" scope="col">Mission</th>
-              <th className="fs-3 border" scope="col">Description</th>
-              <th className="fs-3 border" scope="col">Status</th>
-              <th className="fs-3 border" scope="col"> </th>
+              <th className="fs-3 border" scope="col">
+                Mission
+              </th>
+              <th className="fs-3 border" scope="col">
+                Description
+              </th>
+              <th className="fs-3 border" scope="col">
+                Status
+              </th>
+              <th className="fs-3 border" scope="col">
+                {' '}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -82,22 +102,35 @@ describe('Testing User Interation: ', () => {
       </div>,
     );
     expect(tree).toMatchSnapshot();
-    expect(screen.getByTestId('joinButton')).toHaveTextContent('Cancel Mission');
+    expect(screen.getByTestId('joinButton')).toHaveTextContent(
+      'Cancel Mission',
+    );
   });
 
   it('Tests Leave Button', () => {
     const missionsArr = [];
     missionsArr.push(mission2);
-    const joined = missionsReducer(missionsArr, leaveMissions(mission2.mission_id));
+    const joined = missionsReducer(
+      missionsArr,
+      leaveMissions(mission2.mission_id),
+    );
     const tree = render(
       <div>
         <table className="table table-striped">
           <thead>
             <tr>
-              <th className="fs-3 border" scope="col">Mission</th>
-              <th className="fs-3 border" scope="col">Description</th>
-              <th className="fs-3 border" scope="col">Status</th>
-              <th className="fs-3 border" scope="col"> </th>
+              <th className="fs-3 border" scope="col">
+                Mission
+              </th>
+              <th className="fs-3 border" scope="col">
+                Description
+              </th>
+              <th className="fs-3 border" scope="col">
+                Status
+              </th>
+              <th className="fs-3 border" scope="col">
+                {' '}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -110,28 +143,5 @@ describe('Testing User Interation: ', () => {
     );
     expect(tree).toMatchSnapshot();
     expect(screen.getByTestId('joinButton')).toHaveTextContent('Join Mission');
-  });
-
-  it('Tests MyMissions Render', () => {
-    const missionsArr = [];
-    missionsArr.push(mission);
-    const joined = missionsReducer(missionsArr, joinMissions(mission.mission_id));
-    render(
-      <div>
-        <table className="table table-striped w-50">
-          <thead>
-            <tr>
-              <th className="fs-3 border" scope="col">My Missions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {joined.map((myMission) => (
-              <MyMissions key={myMission.mission_id} mission={myMission} />
-            ))}
-          </tbody>
-        </table>
-      </div>,
-    );
-    expect(screen.getByTestId('myMissions')).toHaveTextContent(joined[0].name);
   });
 });
