@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# React Group Project
+# React Group Project with SpaceX API
 
 ## About
 
