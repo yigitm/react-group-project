@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-group-project/static/css/main.ea787fc0.css",
+    "main.js": "/react-group-project/static/js/main.a05dbdab.js",
+    "static/js/787.d20c3284.chunk.js": "/react-group-project/static/js/787.d20c3284.chunk.js",
+    "static/media/planet.png": "/react-group-project/static/media/planet.3f6fb2742f28651730c0.png",
+    "index.html": "/react-group-project/index.html",
+    "main.ea787fc0.css.map": "/react-group-project/static/css/main.ea787fc0.css.map",
+    "main.a05dbdab.js.map": "/react-group-project/static/js/main.a05dbdab.js.map",
+    "787.d20c3284.chunk.js.map": "/react-group-project/static/js/787.d20c3284.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea787fc0.css",
+    "static/js/main.a05dbdab.js"
+  ]
+}
