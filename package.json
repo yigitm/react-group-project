@@ -1,4 +1,5 @@
 {
+  "homepage": "https://yigitm.github.io/react-group-project",
   "name": "react-group-project",
   "version": "0.1.0",
   "private": true,
@@ -26,6 +27,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -61,6 +64,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^3.2.3",
     "jest": "^27.4.7",
     "jest-watch-typeahead": "^0.6.5",
     "stylelint": "^13.13.1",
