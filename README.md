@@ -4,9 +4,9 @@
 
 ## About
 
-The SpaceX API is used to build a React & Redux app that will allow users to mock; book & cancel rocket reservation and join selected space missions.
+The SpaceX API is used to build a React & Redux app that will allow users to mock; book & cancel rocket reservations and join selected space missions.
 
-Our development flow included: performing git flow practices & using components with routers, life cycle methods,handling events and state management by Redux store,actions, reducers in [duck Patern](https://github.com/erikras/ducks-modular-redux) with unit and component tests.
+Our development flow included: performing git-flow practices & using components with routers, life cycle methods, handling events and state management by Redux store, actions, reducers in [duck Pattern](https://github.com/erikras/ducks-modular-redux) with unit and component tests.
 
 ![App_Gif](./src/images/app.gif);
 
